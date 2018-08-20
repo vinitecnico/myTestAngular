@@ -1,0 +1,42 @@
+<h1>Counter</h1>
+
+<p>This is a simple example of an Angular component.</p>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <label class="btn btn-success btn-file">
+                Upload CSV <input type="file" name="file" (change)="uploadOnChange(file.files)" #file/>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 1%;">
+            <button [disabled]="!files" class="btn btn-primary" (click)="upload()">upload</button>
+            <button [disabled]="!files" class="btn btn-secondary" (click)="clear()">clear</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" *ngIf="data && data.length > 0">
+            <table class='table table-striped'>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of data">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-12" style="margin-top: 1%;" *ngIf="isNotFileCSV">
+            <div class="alert alert-danger" role="alert">
+                File is not of the correct extension! The File correct is CSV!
+            </div>
+        </div>
+    </div>
+</div>
