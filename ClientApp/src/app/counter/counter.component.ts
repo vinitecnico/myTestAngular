@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http'
+import { HttpClient, HttpRequest, HttpEventType, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-counter-component',
@@ -30,6 +30,7 @@ export class CounterComponent {
     } else {
       this.isNotFileCSV = false;
       this.files = files;
+      this.upload();
     }
   }
 
@@ -44,7 +45,7 @@ export class CounterComponent {
       formData.append(file.name, file);
     }
 
-    const uploadReq = new HttpRequest('POST', `api/SampleData/UploadFile`, formData, {
+    const uploadReq = new HttpRequest('POST', `api/FileData/UploadFile`, formData, {
       reportProgress: true,
     });
 

@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using myTestAngular.Data;
+using myTestAngular.Interfaces;
+using myTestAngular.Models;
 
 namespace myTestAngular
 {
@@ -27,6 +30,13 @@ namespace myTestAngular
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            // services.Configure<Settings> (options => {
+            //     options.ConnectionString = Configuration.GetSection ("MongoConnection:ConnectionString").Value;
+            //     options.Database = Configuration.GetSection ("MongoConnection:Database").Value;
+            // });
+
+            // services.AddTransient<IRepository<PointSheet>, PointSheetRepository> ();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
