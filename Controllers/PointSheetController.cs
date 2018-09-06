@@ -9,10 +9,10 @@ namespace myTestAngular.Controllers
     [Route ("api/[controller]")]
     public class PointSheetController : Controller
     {
-        // private readonly IRepository<PointSheet> _pointSheetRepository;
-        // public PointSheetController (IRepository<PointSheet> pointSheetRepository) {
-        //     _pointSheetRepository = pointSheetRepository;
-        // }
+        private readonly IRepository<PointSheet> _pointSheetRepository;
+        public PointSheetController (IRepository<PointSheet> pointSheetRepository) {
+            _pointSheetRepository = pointSheetRepository;
+        }
 
         [HttpGet]
         public async Task<IEnumerable<PointSheet>> GetAll () {            
