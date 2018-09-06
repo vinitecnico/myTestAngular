@@ -1,6 +1,6 @@
 # myTestAngular
 
-Upload file webApi rest with Angular
+Upload file csv webApi rest with Angular
 
 dotnet build
 
